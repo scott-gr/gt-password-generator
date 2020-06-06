@@ -11,10 +11,11 @@ function charOptions() {
   const randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
   const randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
 
-  console.log(randomLower);
-  console.log(randomUpper);
-  console.log(randomNumber);
-  console.log(randomSpecial);
+  /// Logged to confirm mathrandom results
+  // console.log(randomLower);
+  // console.log(randomUpper);
+  // console.log(randomNumber);
+  // console.log(randomSpecial);
 
 //Array of results
   const randomArray = [ randomLower, randomUpper, randomNumber, randomSpecial]
