@@ -19,8 +19,12 @@ function charOptions() {
 
 //Array of results
   const randomArray = [ randomLower, randomUpper, randomNumber, randomSpecial]
+  
+//selects one from randomArray ^
+  var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
 
   console.log(randomArray)
+  console.log(charChoice)
 }
 
 console.log(charOptions());
