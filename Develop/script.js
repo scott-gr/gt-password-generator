@@ -1,23 +1,28 @@
-// Assignment Code
+// Declare variables
 const generateBtn = document.querySelector("#generate");
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 const specialCharacters = '~`!@#$%^&*-_+=<>?/;:[]{}\|';
 
-//number generator
-function getCharacter() {
-  var randomNumber = Math.floor(Math.random() * 10);
-  var randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
-  var randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
-  var randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+//Creates a random character of each type
+function charOptions() {
+  const randomNumber = Math.floor(Math.random() * 10);
+  const randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
+  const randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
+  const randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
 
   console.log(randomLower);
   console.log(randomUpper);
   console.log(randomNumber);
   console.log(randomSpecial);
+
+//Array of results
+  const randomArray = [ randomLower, randomUpper, randomNumber, randomSpecial]
+
+  console.log(randomArray)
 }
 
-console.log(getCharacter());
+console.log(charOptions());
 
 
 
