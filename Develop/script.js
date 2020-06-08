@@ -11,7 +11,7 @@ const randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters
 const randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
 const randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
 
-//Creates a random character of each type
+//Establishes Array of character options, and removes options that the user declines.
 function charOptions() {
   //creates array of random character of each type
   var randomArray = [ randomLower, randomUpper, randomNumber, randomSpecial]
@@ -21,9 +21,10 @@ function charOptions() {
   console.log(randomNumber);
   console.log(randomSpecial);
   console.log(randomArray)
-
+  //randomly chooses one element from randomArray, with all options present
   var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
   console.log(charChoice);
+
 
 }
 
