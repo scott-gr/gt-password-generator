@@ -23,7 +23,8 @@ document.getElementById('generate').onclick = function charOptions() {
   console.log(randomLower);
   console.log(randomNumber);
   console.log(randomSpecial);
-  console.log(randomArray)
+  console.log(randomArray);
+  
 
   ///Starts at 0 until user declares length
   var passwordLength = 0
@@ -33,6 +34,7 @@ document.getElementById('generate').onclick = function charOptions() {
     charOptions();
   }
   else {
+    outcome = '';
     useUpper = confirm('Click "OK" to include UPPERCASE letters in your password.');
     useLower = confirm('Click "OK" to include lowercase letters in your password.');
     useNumber = confirm('Click "OK" to include numbers in your password.');
@@ -61,7 +63,9 @@ document.getElementById('generate').onclick = function charOptions() {
       outcome += charChoice
     }
     return outcome;
+    
   }
+  console.log(outcome);
 }
 
 
