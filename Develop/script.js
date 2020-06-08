@@ -24,8 +24,6 @@ document.getElementById('generate').onclick = function charOptions() {
   console.log(randomNumber);
   console.log(randomSpecial);
   console.log(randomArray)
-  //randomly chooses one element from randomArray, with all options present
-  // var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
 
   ///Starts at 0 until user declares length
   var passwordLength = 0
@@ -51,16 +49,20 @@ document.getElementById('generate').onclick = function charOptions() {
       if (useLower !== true); {
         delete randomArray[1];
       }
-      if (useNower !== true); {
+      if (useNumber !== true); {
         delete randomArray[2];
       }
       if (useSpecial !== true); {
         delete randomArray[3];
       }
     }
-  for (i = 0; i < passwordLength; i++) {
-    
+    for (i = 0; i < passwordLength; i++) {
+      var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
+      outcome += charChoice
+    }
+    return outcome;
   }
+}
 
 
 
