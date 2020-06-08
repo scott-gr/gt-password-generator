@@ -44,7 +44,23 @@ document.getElementById('generate').onclick = function charOptions() {
       charOptions();
     }
 
-
+    else {
+      if (useUpper !== true); {
+        delete randomArray[0];
+      }
+      if (useLower !== true); {
+        delete randomArray[1];
+      }
+      if (useNower !== true); {
+        delete randomArray[2];
+      }
+      if (useSpecial !== true); {
+        delete randomArray[3];
+      }
+    }
+  for (i = 0; i < passwordLength; i++) {
+    
+  }
 
 
 
