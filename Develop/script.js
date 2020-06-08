@@ -1,18 +1,24 @@
 // generate button references #generate id in html.index
 const generateBtn = document.querySelector("#generate");
+// function result will fill in #password id in html.index
+const passwordResult = document.querySelector("#password");
 //Establish possible characters options for letters and special characters
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 const specialCharacters = '~`!@#$%^&*-_+=<>?/;:[]{}\|';
 
 //Establishes Array of character options, and removes options that the user declines.
-function charOptions() {
-
+function charOptions(); {
+///Starts at 0 until user declares length
+  var passwordLength= 0;
+  while (true){
     passwordLength = prompt('Enter a number between 8 and 128 for your desired password length, then click "OK".');
     if (passwordLength <8 || > 128) {
       alert('Please enter a number between 8 and 128 and try again.');
       charOptions();
     }
+  }
+}
 
   //Chooses random character from variables above
   const randomNumber = Math.floor(Math.random() * 10); //randomNumber doesn't need to reference a variable, it's choosing an interger 0-9 right here.
@@ -49,4 +55,4 @@ console.log(charOptions());
 
 
     // Add event listener to generate button
-    // generateBtn.addEventListener("click", writePassword
+generateBtn.addEventListener("click", charOptions);
