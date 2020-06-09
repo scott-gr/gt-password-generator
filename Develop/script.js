@@ -1,7 +1,4 @@
-// generate button references #generate id in html.index
-// const generateBtn = document.querySelector("#generate");
-// generateBtn.addEventListener("click", charOptions);
-// function result will fill in #password id in html.index
+
 const passwordOutput = document.querySelector("#password");
 //Establish possible characters options for letters and special characters
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -23,45 +20,45 @@ document.getElementById('generate').onclick = function charOptions() {
 }
 
 function charGenerate() {
-  var randomSet = '';
   var passwordString = '';
+  let randomSet = '';
   //Use results from charOptions to fill in array of options.
-  if (confirm('Click "OK" to include UPPERCASE letters in your password.')) {
+  var upper = confirm('Click "OK" to include UPPERCASE letters in your password.');
+  if (upper === true) {
     randomSet += uppercaseLetters;
     console.log("Use uppercase");
   }
-  if (confirm('Click "OK" to include lowercase letters in your password.')) {
+  var lower = confirm('Click "OK" to include lowercase letters in your password.');
+  if (lower === true) {
     randomSet += lowercaseLetters;
     console.log("Use lowercase");
   }
-  if (confirm('Click "OK" to include numbers in your password.')) {
+  var number = confirm('Click "OK" to include numbers in your password.');
+  if (number === true) {
     randomSet += numericCharacters;
     console.log("Use numbers");
   }
-  if (confirm('Click "OK" to include special characters in your password.')) {
+  var special = confirm('Click "OK" to include special characters in your password.');
+  if (special === true) {
     randomSet += specialCharacters;
     console.log("Use special");
   }
-  if (randomSet = '') {
-    alert('You must select at least 1 character type. Please try again.')
-  }
-  else {
+  if (upper !== true && lower !== true && number !== true && special !== true) {
+    alert('Please select at least one character type.')
+    return
+  } else {
     console.log(randomSet);
   }
+
   for (i = 0; i < passwordLength; i++) {
     passwordString += randomSet[Math.floor(Math.random() * (randomSet.length))];
     console.log(passwordString);
   }
-return passwordString
-
+  return passwordString
 }
+
 // // Write password to the #password input
 function writePassword() {
-  charGenerate();
-  // var passwordOutput = document.querySelector('#password');
-
-  if (password != null) {
-    passwordOutput.value = charGenerate();
-    console.log('Password Generated')
-  }
+  passwordOutput.value = charGenerate();
+  console.log('Password Generated')
 }
