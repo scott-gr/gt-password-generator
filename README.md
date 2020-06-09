@@ -1,48 +1,52 @@
 # Password Generator
+https://scott-gr.github.io/gt-password-generator/
+<hr>
 
-Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+## Description
+This application creates a secure, random password based on the user's criteria. The user can choose password length (between 8 and 128 characters) and what characters to include (uppercase letters, lowercase letters, numbers, and special characters). The app functions well in both desktop and mobile browsers.
 
-If you are unfamiliar with special characters, take a look at [some examples](https://www.owasp.org/index.php/Password_special_characters).
+<hr>
 
-## User Story
+## Contents
+ * Assets folder
+  - style.css
+  - screenshots folder
+ * index.html
+ * script.js
+ * README.md
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+<hr>
 
-## Acceptance Criteria
+## Installation
+ 1. Clone the github repo: 
+ 2. Open index.html in your browser.
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+<hr>
 
-The following image demonstrates the application functionality:
+## Usage
+ * Navigate to the deployed app (https://scott-gr.github.io/gt-password-generator/) or install from repo.
 
-![password generator demo](./Assets/03-javascript-homework-demo.png)
+ - Click 'Generate Password' button to begin.
+ - Follow prompts to confirm your desired password criteria.
+ - When all prompts are confirmed, a randomly generated password will appear in the center box. Write down or copy the password.
+ - You may click 'Generate Password' again to create another password. There is no limit, but previous passwords will not be stored.
 
-## Review
+![screen1](Assets/screenshots/screen-1-starting-screen.png)
+![screen2](Assets/screenshots/screen-2-length-prompt.png)
+![screen3](Assets/screenshots/screen-3-character-options.png)
+![screen4](Assets/screenshots/screen-4-generated-password.png)
 
-You are required to submit the following for review:
+<hr>
 
-* The URL of the deployed application.
+## Credits
+Thank you to GT Coding Bootcamp for html and css files. Color scheme from coolers.co (https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533)
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+<hr>
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+## Collaborators
+I, Scott Griffin was the sole collaborator on this project.
+
+<hr>
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
