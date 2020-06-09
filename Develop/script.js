@@ -33,7 +33,7 @@ document.getElementById('generate').onclick = function charOptions() {
 
 function charGenerate() {
   var randomSet = '';
-  var password = '';
+  var passwordString = '';
   //Use results from charOptions to fill in array of options.
   if (upper === true); {
     randomSet += uppercaseLetters;
@@ -47,58 +47,29 @@ function charGenerate() {
   if (special === true); {
     randomSet += specialCharacters;
   }
-  if (randomSet = ''){
+  if (randomSet = '') {
     alert('You must select at least 1 character type. Please try again.')
   }
-    else {
+  else {
     console.log(randomSet);
-    }
-  for (i = 0; i < passwordLength; i++) {
-    password += randomSet[Math.floor(Math.random() * randomSet.length)];
   }
-  return password
+  for (i = 0; i < passwordLength; i++) {
+    passwordString += randomSet[Math.floor(Math.random() * randomSet.length)];
+    console.log(password);
+  }
+  return passwordString
+
 }
+// // Write password to the #password input
+function writePassword() {
+  var password = charGenerate();
+  var passwordOutput = document.querySelector("#password");
 
-// return outcome;
-
-
-// var randomNumber = Math.floor(Math.random() * 10); //randomNumber doesn't need to reference a variable, it's choosing an interger 0-9 right here.
-// var randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
-// var randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
-// var randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-//Chooses random character from variables above
-
-//creates array of random character of each type
-
-  //confirm variables work, and appear same in array
-
-// //Chooses random character from variables above
-// const randomNumber = Math.floor(Math.random() * 10); //randomNumber doesn't need to reference a variable, it's choosing an interger 0-9 right here.
-// const randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
-// const randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
-// const randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-// //creates array of random character of each type
-// var randomArray = [randomUpper, randomLower, randomNumber, randomSpecial]
-// //confirm variables work, and appear same in array
-// console.log(randomUpper);
-// console.log(randomLower);
-// console.log(randomNumber);
-// console.log(randomSpecial);
-// console.log(randomArray)
-// //randomly chooses one element from randomArray, with all options present
-// var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
-// console.log(charChoice);
-
-
-
-
-
-    // // // Write password to the #password input
-    // function writePassword() {
-    //   var password = generatePassword();
-    //   var passwordText = document.querySelector("#password");
-
-    //   passwordText.value = password;
+  if (password != null) {
+    passwordOutput.value = password
+    console.log("Password Generated")
+  }
+}
 
 
 
