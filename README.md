@@ -39,7 +39,7 @@ This application creates a secure, random password based on the user's criteria.
 <hr>
 
 ## Credits
-Thank you to GT Coding Bootcamp for html and css files. Color scheme from coolers.co (https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533)
+Thank you to GT Coding Bootcamp for html and css files. Thank you to bootcamp classmates for links to javascript resources and discussion of logic outline notes for application. Color scheme from coolers.co (https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533)
 
 <hr>
 
