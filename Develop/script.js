@@ -23,7 +23,7 @@ document.getElementById('generate').onclick = function charOptions() {
     useNumber = confirm('Click "OK" to include numbers in your password.');
     useSpecial = confirm('Click "OK" to include special characters in your password.');
     if (useUpper !== true && useLower !== true && useNumber !== true && useSpecial !== true) {
-      alert('You must select at least 1 character type. Please try again.')
+
       return
     } else {
       charGenerate(useUpper, useLower, useNumber, useSpecial)
@@ -31,38 +31,32 @@ document.getElementById('generate').onclick = function charOptions() {
   }
 }
 
-function charGenerate(upper, lower, number, special) {
-  //variables, arranging into array here and defining values later
-  var randomUpper = '';
-  var randomLower = '';
-  var randomNumber = '';
-  var randomSpecial = '';
+function charGenerate() {
   var randomSet = '';
-  var outcome = '';
+  var password = '';
   //Use results from charOptions to fill in array of options.
   if (upper === true); {
-    randomSet += randomUpper;
+    randomSet += uppercaseLetters;
   }
   if (lower === true); {
-    randomSet += randomLower;
+    randomSet += lowercaseLetters;
   }
   if (number === true); {
-    randomSet += randomNumber;
+    randomSet += numericCharacters;
   }
   if (special === true); {
-    randomSet += randomSpecial;
+    randomSet += specialCharacters;
   }
-  console.log(randomSet);
+  if (randomSet = ''){
+    alert('You must select at least 1 character type. Please try again.')
+  }
+    else {
+    console.log(randomSet);
+    }
   for (i = 0; i < passwordLength; i++) {
-    var randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
-    var randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
-    var randomNumber = Math.floor(Math.random() * 10);
-    var randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-    var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
-
-    outcome += charChoice
-    return outcome;
+    password += randomSet[Math.floor(Math.random() * randomSet.length)];
   }
+  return password
 }
 
 // return outcome;
