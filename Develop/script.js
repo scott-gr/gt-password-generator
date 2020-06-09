@@ -11,7 +11,6 @@ const specialCharacters = '~`!@#$%^&*-_+=<>?/;:[]{}\|';
 //Establishes Array of character options, and removes options that the user declines.
 document.getElementById('generate').onclick = function charOptions() {
   ///Starts at 0 until user declares length
-
   var passwordLength = 0
   var passwordLength = prompt('Enter a number between 8 and 128 for your desired password length, then click "OK".');
   if (passwordLength < 8 || passwordLength > 128) {
@@ -19,8 +18,6 @@ document.getElementById('generate').onclick = function charOptions() {
     charOptions();
   }
   else {
-    var outcome = '';
-    var randomArray = [];
     var useUpper = confirm('Click "OK" to include UPPERCASE letters in your password.');
     var useLower = confirm('Click "OK" to include lowercase letters in your password.');
     var useNumber = confirm('Click "OK" to include numbers in your password.');
@@ -28,27 +25,31 @@ document.getElementById('generate').onclick = function charOptions() {
     if (useUpper !== true && useLower !== true && useNumber !== true && useSpecial !== true) {
       alert('You must select at least 1 character type. Please try again.')
       charOptions();
+    } else {
+      charGenerate(useUpper, useLower, useNumber, useSpecial)
     }
-    else {      
-      if (useUpper === true); {
-        randomArray.splice(0, 0, (uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)]));
-      }
-      if (useLower !== true); {
-        randomArray.splice(1, 0, (lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)]));
-      }
-      if (useNumber !== true); {
-        randomArray.splice(2, 0, (Math.floor(Math.random() * 10)));
-      }
-      if (useSpecial !== true); {
-        randomArray.splice(3, 0, (specialCharacters[Math.floor(Math.random() * specialCharacters.length)]));
-      }
-    }
-    console.log(randomArray);
-    for (i = 0; i < passwordLength; i++) {
-      var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
-      outcome += charChoice
-    }
-    return outcome;
+  }
+
+function charGenerate(useUpper, useLower, useNumber, useSpecial)
+  if (useUpper === true); {
+    randomArray.splice(0, 0, (uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)]));
+  }
+  if (useLower !== true); {
+    randomArray.splice(1, 0, (lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)]));
+  }
+  if (useNumber !== true); {
+    randomArray.splice(2, 0, (Math.floor(Math.random() * 10)));
+  }
+  if (useSpecial !== true); {
+    randomArray.splice(3, 0, (specialCharacters[Math.floor(Math.random() * specialCharacters.length)]));
+  }
+}
+console.log(randomArray);
+for (i = 0; i < passwordLength; i++) {
+  var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
+  outcome += charChoice
+}
+return outcome;
 
   }
   console.log(outcome);
