@@ -62,10 +62,10 @@ function charGenerate() {
     return passwordString
   }
 }
-  // // Write password to the #password input box
+// // Write password to the #password input box
 function writePassword() {
   var password = charGenerate();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  console.log('Password Generated');
+  console.log('Password Generated Successfully');
 }
