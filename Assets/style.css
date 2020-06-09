@@ -11,7 +11,7 @@ body,
   margin: 0;
   padding: 0;
 }
-
+/* page background and font throughout*/
 body {
   font-family: sans-serif;
   background-color: #2F3732;
@@ -22,14 +22,14 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
-
+/* header text*/
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
   color: #ECEDE8
 }
-
+/* main card area */
 .card {
   background-color: #ECEDE8;
   border-radius: 5px;
@@ -71,7 +71,7 @@ header {
   display: block;
   clear: both;
 }
-
+/* Button style */
 .btn {
   border: none;
   background-color: #8B2635;
@@ -96,7 +96,7 @@ button[disabled] {
 .float-right {
   float: right;
 }
-
+/* password textbox appearance */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
