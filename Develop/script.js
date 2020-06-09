@@ -7,61 +7,63 @@ const passwordResult = document.querySelector("#password");
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
 const specialCharacters = '~`!@#$%^&*-_+=<>?/;:[]{}\|';
+const numericCharacters = '0123456789';
 
 //Establishes Array of character options, and removes options that the user declines.
 document.getElementById('generate').onclick = function charOptions() {
-  ///Starts at 0 until user declares length
-  var passwordLength = 0
-  var passwordLength = prompt('Enter a number between 8 and 128 for your desired password length, then click "OK".');
+  passwordLength = prompt('Enter a number between 8 and 128 for your desired password length, then click "OK".');
   if (passwordLength < 8 || passwordLength > 128) {
     alert('Please enter a number between 8 and 128 and try again.');
-    charOptions();
+    return
   }
   else {
-    var useUpper = confirm('Click "OK" to include UPPERCASE letters in your password.');
-    var useLower = confirm('Click "OK" to include lowercase letters in your password.');
-    var useNumber = confirm('Click "OK" to include numbers in your password.');
-    var useSpecial = confirm('Click "OK" to include special characters in your password.');
+    console.log(passwordLength);
+    useUpper = confirm('Click "OK" to include UPPERCASE letters in your password.');
+    useLower = confirm('Click "OK" to include lowercase letters in your password.');
+    useNumber = confirm('Click "OK" to include numbers in your password.');
+    useSpecial = confirm('Click "OK" to include special characters in your password.');
     if (useUpper !== true && useLower !== true && useNumber !== true && useSpecial !== true) {
       alert('You must select at least 1 character type. Please try again.')
-      charOptions();
+      return
     } else {
       charGenerate(useUpper, useLower, useNumber, useSpecial)
     }
   }
 }
 
-  function charGenerate(upper, lower, number, special) {
-    //variables, arranging into array here and defining values later
-    var randomUpper = '';
-    var randomLower = '';
-    var randomNumber = '';
-    var randomSpecial = '';
-    var randomArray = [];
-    //Use results from charOptions to fill in array of options.
-    if (upper === true); {
-      randomArray.push(randomUpper)
-    }
-    if (lower === true); {
-      randomArray.push(randomLower)
-    }
-    if (number === true); {
-      randomArray.push(randomNumber)
-    }
-    if (special === true); {
-      randomArray.push(randomSpecial)
-    }
-    for (i = 0; i < passwordLength; i++) {
-      var randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
-      var randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
-      var randomNumber = Math.floor(Math.random() * 10);
-      var randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-      var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
-
-      outcome += charChoice
-      return outcome;
-    }
+function charGenerate(upper, lower, number, special) {
+  //variables, arranging into array here and defining values later
+  var randomUpper = '';
+  var randomLower = '';
+  var randomNumber = '';
+  var randomSpecial = '';
+  var randomSet = '';
+  var outcome = '';
+  //Use results from charOptions to fill in array of options.
+  if (upper === true); {
+    randomSet += randomUpper;
   }
+  if (lower === true); {
+    randomSet += randomLower;
+  }
+  if (number === true); {
+    randomSet += randomNumber;
+  }
+  if (special === true); {
+    randomSet += randomSpecial;
+  }
+  console.log(randomSet);
+  for (i = 0; i < passwordLength; i++) {
+    var randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
+    var randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
+    var randomNumber = Math.floor(Math.random() * 10);
+    var randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+    var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
+
+    outcome += charChoice
+    return outcome;
+  }
+}
 
 // return outcome;
 
