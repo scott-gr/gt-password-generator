@@ -2,7 +2,7 @@
 // const generateBtn = document.querySelector("#generate");
 // generateBtn.addEventListener("click", charOptions);
 // function result will fill in #password id in html.index
-const passwordResult = document.querySelector("#password");
+const passwordOutput = document.querySelector("#password");
 //Establish possible characters options for letters and special characters
 const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
@@ -18,16 +18,7 @@ document.getElementById('generate').onclick = function charOptions() {
   }
   else {
     console.log(passwordLength);
-    useUpper = confirm('Click "OK" to include UPPERCASE letters in your password.');
-    useLower = confirm('Click "OK" to include lowercase letters in your password.');
-    useNumber = confirm('Click "OK" to include numbers in your password.');
-    useSpecial = confirm('Click "OK" to include special characters in your password.');
-    if (useUpper !== true && useLower !== true && useNumber !== true && useSpecial !== true) {
-
-      return
-    } else {
-      charGenerate(useUpper, useLower, useNumber, useSpecial)
-    }
+    charGenerate()
   }
 }
 
@@ -35,17 +26,21 @@ function charGenerate() {
   var randomSet = '';
   var passwordString = '';
   //Use results from charOptions to fill in array of options.
-  if (upper === true); {
+  if (confirm('Click "OK" to include UPPERCASE letters in your password.')) {
     randomSet += uppercaseLetters;
+    console.log("Use uppercase");
   }
-  if (lower === true); {
+  if (confirm('Click "OK" to include lowercase letters in your password.')) {
     randomSet += lowercaseLetters;
+    console.log("Use lowercase");
   }
-  if (number === true); {
+  if (confirm('Click "OK" to include numbers in your password.')) {
     randomSet += numericCharacters;
+    console.log("Use numbers");
   }
-  if (special === true); {
+  if (confirm('Click "OK" to include special characters in your password.')) {
     randomSet += specialCharacters;
+    console.log("Use special");
   }
   if (randomSet = '') {
     alert('You must select at least 1 character type. Please try again.')
@@ -54,23 +49,19 @@ function charGenerate() {
     console.log(randomSet);
   }
   for (i = 0; i < passwordLength; i++) {
-    passwordString += randomSet[Math.floor(Math.random() * randomSet.length)];
-    console.log(password);
+    passwordString += randomSet[Math.floor(Math.random() * (randomSet.length))];
+    console.log(passwordString);
   }
-  return passwordString
+return passwordString
 
 }
 // // Write password to the #password input
 function writePassword() {
-  var password = charGenerate();
-  var passwordOutput = document.querySelector("#password");
+  charGenerate();
+  // var passwordOutput = document.querySelector('#password');
 
   if (password != null) {
-    passwordOutput.value = password
-    console.log("Password Generated")
+    passwordOutput.value = charGenerate();
+    console.log('Password Generated')
   }
 }
-
-
-
-    // Add event listener to generate button
