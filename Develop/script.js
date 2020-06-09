@@ -29,32 +29,43 @@ document.getElementById('generate').onclick = function charOptions() {
       charGenerate(useUpper, useLower, useNumber, useSpecial)
     }
   }
+}
 
-function charGenerate(useUpper, useLower, useNumber, useSpecial)
-  if (useUpper === true); {
-    randomArray.splice(0, 0, (uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)]));
-  }
-  if (useLower !== true); {
-    randomArray.splice(1, 0, (lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)]));
-  }
-  if (useNumber !== true); {
-    randomArray.splice(2, 0, (Math.floor(Math.random() * 10)));
-  }
-  if (useSpecial !== true); {
-    randomArray.splice(3, 0, (specialCharacters[Math.floor(Math.random() * specialCharacters.length)]));
-  }
-}
-console.log(randomArray);
-for (i = 0; i < passwordLength; i++) {
-  var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
-  outcome += charChoice
-}
-return outcome;
+  function charGenerate(upper, lower, number, special) {
+    //variables, arranging into array here and defining values later
+    var randomUpper = '';
+    var randomLower = '';
+    var randomNumber = '';
+    var randomSpecial = '';
+    var randomArray = [];
+    //Use results from charOptions to fill in array of options.
+    if (upper === true); {
+      randomArray.push(randomUpper)
+    }
+    if (lower === true); {
+      randomArray.push(randomLower)
+    }
+    if (number === true); {
+      randomArray.push(randomNumber)
+    }
+    if (special === true); {
+      randomArray.push(randomSpecial)
+    }
+    for (i = 0; i < passwordLength; i++) {
+      var randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
+      var randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
+      var randomNumber = Math.floor(Math.random() * 10);
+      var randomSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+      var charChoice = randomArray[Math.floor(Math.random() * randomArray.length)];
 
+      outcome += charChoice
+      return outcome;
+    }
   }
-  console.log(outcome);
-  console.log(charOptions());
-}
+
+// return outcome;
+
+
 // var randomNumber = Math.floor(Math.random() * 10); //randomNumber doesn't need to reference a variable, it's choosing an interger 0-9 right here.
 // var randomUpper = uppercaseLetters[Math.floor(Math.random() * uppercaseLetters.length)];
 // var randomLower = lowercaseLetters[Math.floor(Math.random() * lowercaseLetters.length)];
@@ -96,4 +107,3 @@ return outcome;
 
 
     // Add event listener to generate button
-
